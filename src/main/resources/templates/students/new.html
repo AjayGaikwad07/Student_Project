@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            margin-top: 20px;
+            max-width: 400px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        a {
+            display: block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        a:hover {
+            color: #555;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>New Student</title>
+</head>
+<body>
+<h2>New Student</h2>
+<form method="post" th:object="${student}" th:action="@{/save}">
+    <label>First Name: <input type="text" th:field="*{firstName}" required/></label><br/>
+    <label>Last Name: <input type="text" th:field="*{lastName}" required/></label><br/>
+    <label>Mobile Number: <input type="number" th:field="*{MobileNumber}" required/></label>
+    <label>Email: <input type="email" th:field="*{email}" required/></label><br/>
+    <label>State:<input type="text"th:field="*{State}" required/></label>
+    <button type="submit">Save</button>
+</form>
+<br/>
+<a href="/">Back to Student List</a>
+</body>
+</html>
